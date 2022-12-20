@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val sessionUID = intent.extras?.getString("SessionUID")
         binding.button1.setOnClickListener {
             intent=Intent(this,Button1::class.java)
+            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
 
@@ -25,14 +26,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.button3.setOnClickListener {
-            // intent.putExtra("SessionUID", sessionUID)
+            intent=Intent(this,ShowCoursesActivity::class.java)
+            intent.putExtra("SessionUID", sessionUID)
+            startActivity(intent)
         }
         binding.button4.setOnClickListener {
             intent=Intent(this,Button4::class.java)
+            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
         binding.button5.setOnClickListener {
             intent=Intent(this,Button5::class.java)
+            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
         binding.button6.setOnClickListener {

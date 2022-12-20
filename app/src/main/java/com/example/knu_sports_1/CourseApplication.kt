@@ -1327,7 +1327,6 @@ class CourseApplication : AppCompatActivity() {
         val eventHandler1= object : DialogInterface.OnClickListener {
             override fun onClick(p0: DialogInterface?, p1: Int) {
 
-                Toast.makeText(applicationContext, applied_course_serial, Toast.LENGTH_SHORT).show()
                 if(p1==DialogInterface.BUTTON_POSITIVE){
 
 
