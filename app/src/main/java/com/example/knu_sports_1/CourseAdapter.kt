@@ -1,4 +1,4 @@
-package com.example.recyclerfirebase
+package com.example.knu_sports_1
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

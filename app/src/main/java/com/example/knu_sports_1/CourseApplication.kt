@@ -1381,7 +1381,7 @@ class CourseApplication : AppCompatActivity() {
         }
         binding.btnCancel.setOnClickListener {
             AlertDialog.Builder(this).run {
-                setTitle("강좌 신청하기")
+                setTitle("강좌 취소하기")
                 setIcon(android.R.drawable.ic_dialog_info)
                 setMessage("정말 취소하시겠습니까?")
                 setPositiveButton("Yes",eventHandler2)

@@ -16,6 +16,32 @@
         android:theme="@style/Theme.Knu_sports_1"
         tools:targetApi="31">
         <activity
+            android:name=".ShowFacilitiesActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY" />
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_map" />
+        <activity
             android:name=".ShowCoursesActivity"
             android:exported="false">
             <meta-data
@@ -57,25 +83,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Facility_apply"
-            android:exported="false" />
-        <activity
-            android:name=".Facility_Apply_tennis"
-            android:exported="false" />
-        <activity
-            android:name=".Facility_Apply_big_volleyball"
-            android:exported="false" />
-        <activity
-            android:name=".Facility_Apply_basketball"
-            android:exported="false" />
-        <activity
-            android:name=".Facility_Apply_small_playground"
-            android:exported="false" />
-        <activity
-            android:name=".Facility_Apply_IndoorGym"
-            android:exported="false" />
-        <activity
-            android:name=".Facility_Apply_big_playground"
+            android:name=".FacilityApply"
             android:exported="false" />
         <activity
             android:name=".Information_place_Tennis"
@@ -94,9 +102,6 @@
             android:exported="false" />
         <activity
             android:name=".Information_place_BigPlayground"
-            android:exported="false" />
-        <activity
-            android:name=".FacilityApplication"
             android:exported="false" />
         <activity
             android:name=".Button5"
@@ -179,7 +184,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

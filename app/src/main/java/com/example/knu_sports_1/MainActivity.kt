@@ -1,6 +1,7 @@
 package com.example.knu_sports_1
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -40,8 +41,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.button6.setOnClickListener {
-
+            intent=Intent(this,ShowFacilitiesActivity::class.java)
+            startActivity(intent)
         }
+        binding.button8.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sports.knu.ac.kr/pages/board/list.php?board_sid=4"))
+            startActivity(intent)
+        }
+        binding.button9.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri
+                .parse("https://sports.knu.ac.kr/pages/board/list.php?board_sid=1"))
+            startActivity(intent)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

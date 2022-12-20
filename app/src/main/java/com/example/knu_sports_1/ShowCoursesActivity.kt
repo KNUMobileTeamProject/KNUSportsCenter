@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.knu_sports_1.databinding.ActivityShowCoursesBinding
-import com.example.recyclerfirebase.CourseAdapter
+import com.example.knu_sports_1.databinding.ActivityShowFacilitiesBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

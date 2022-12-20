@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Facility_apply"
+    tools:context=".FacilityApply"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -124,7 +123,6 @@
                 android:layout_marginRight="10dp"
                 android:background="#8A8787"
                 android:backgroundTint="#8A8787" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -139,22 +137,27 @@
                     android:layout_marginRight="25dp"
                     android:text="예약날짜"
                     android:textStyle="bold" />
-
-
                 <View
                     android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:background="@drawable/dotted_line_vertical"
                     android:backgroundTint="#000000"
                     android:layerType="software" />
-
-                <Spinner
-                    android:id="@+id/categoryComboBox2"
-                    android:layout_width="200dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:spinnerMode="dropdown" />
+                    android:orientation="vertical">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#C1BEBE"
+                        android:text="날짜 선택"
+                        android:textStyle="bold"
+                        android:id="@+id/reservation_date_btn"/>
+                </LinearLayout>
+
+
             </LinearLayout>
 
             <View
@@ -182,7 +185,7 @@
                     android:textStyle="bold" />
                 <View
                     android:layout_width="50dp"
-                    android:layout_height="100dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     android:background="@drawable/dotted_line_vertical"
                     android:backgroundTint="#000000"
@@ -191,27 +194,45 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <Spinner
-                        android:id="@+id/categoryComboBox3"
-                        android:layout_width="200dp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:spinnerMode="dropdown" />
+                        android:orientation="horizontal">
+                        <Spinner
+                            android:id="@+id/categoryComboBox2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:spinnerMode="dropdown" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="~"
+                            android:layout_marginTop="5dp"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+                        <Spinner
+                            android:id="@+id/categoryComboBox3"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:text="- 한 팀당 주 1회 최대 2시간 신청가능"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:text="- 학과 및 단과대학 규모이상의 행사는 사전 협의
-                        후 신청 가능"
-                        android:textSize="12dp" />
+                        android:layout_marginTop="3dp"
+                        android:text="- 학과 및 단과대학 규모이상의 행사는 사전 협의 후 신청 가능"
+                        android:textSize="10dp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -224,7 +245,6 @@
                 android:layout_marginRight="10dp"
                 android:background="#8A8787"
                 android:backgroundTint="#8A8787" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -236,8 +256,8 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="17dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="25dp"
-                    android:text="신청개월"
+                    android:layout_marginRight="9dp"
+                    android:text="신청자 소속"
                     android:textStyle="bold" />
 
                 <View
@@ -254,7 +274,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:spinnerMode="dropdown" />
-
             </LinearLayout>
 
             <View
@@ -265,88 +284,6 @@
                 android:layout_marginRight="10dp"
                 android:background="#8A8787"
                 android:backgroundTint="#8A8787" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="10dp"
-                android:background="#8A8787"
-                android:backgroundTint="#8A8787" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="9dp"
-                    android:text="강습비 타입"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/dotted_line_vertical"
-                    android:backgroundTint="#000000"
-                    android:layerType="software" />
-
-                <Spinner
-                    android:id="@+id/categoryComboBox5"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:spinnerMode="dropdown" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="10dp"
-                android:background="#8A8787"
-                android:backgroundTint="#8A8787" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="38dp"
-                    android:text="강습비"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/dotted_line_vertical"
-                    android:backgroundTint="#000000"
-                    android:layerType="software" />
-
-                <TextView
-                    android:id="@+id/cost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_marginTop="4dp"
-                    android:textSize="17dp"
-                    android:gravity="center_horizontal"/>
-            </LinearLayout>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -366,8 +303,8 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="17dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="0dp"
-                    android:text="현재인원/정원"
+                    android:layout_marginRight="31dp"
+                    android:text="이용자수"
                     android:textStyle="bold" />
 
                 <View
@@ -378,15 +315,30 @@
                     android:backgroundTint="#000000"
                     android:layerType="software"
                     android:layout_marginRight="6dp"/>
-
-                <TextView
-                    android:id="@+id/present_number"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_marginTop="4dp"
-                    android:textSize="17dp"
-                    android:gravity="center_horizontal"/>
+                    android:orientation="horizontal">
+                    <EditText
+                        android:layout_marginTop="5dp"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/editText1"
+                        android:textSize="16dp"
+                        android:background="@drawable/edittext_border"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"/>
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/present_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:text="명"
+                        android:gravity="center_horizontal"/>
+                </LinearLayout>
+
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -396,7 +348,127 @@
                 android:layout_marginRight="10dp"
                 android:background="#8A8787"
                 android:backgroundTint="#8A8787" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="9dp"
+                    android:text="이용자 명단"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/dotted_line_vertical"
+                    android:backgroundTint="#000000"
+                    android:layerType="software" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"
+                        android:ems="10"
+                        android:gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:hint="이용자 명단을 입력하여주세요."
+                        android:id="@+id/editText2"
+                        android:textSize="12sp"
+                        android:background="@drawable/edittext_border"
+                        android:layout_marginLeft="5dp"/>
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="대표자 포함하여 이용자의 소속, 성명, 인원수 입력(대운동장의 경우 최소10명"
+                        android:textStyle="bold"
+                        android:textColor="#F44336"
+                        android:textSize="11dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="10dp"
+                android:background="#8A8787"
+                android:backgroundTint="#8A8787" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="19dp"
+                    android:text="헹사 계획"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/dotted_line_vertical"
+                    android:backgroundTint="#000000"
+                    android:layerType="software" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"
+                        android:ems="10"
+                        android:gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:hint="행사 계획을 입력하여주세요."
+                        android:id="@+id/editText3"
+                        android:textSize="12sp"
+                        android:background="@drawable/edittext_border"
+                        android:layout_marginLeft="5dp"/>
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간별 행사계획, 이용 후 청소계획, 이용인원 통제(주차포함) 계획을 입력"
+                        android:textStyle="bold"
+                        android:textColor="#F44336"
+                        android:textSize="11dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="10dp"
+                android:background="#8A8787"
+                android:backgroundTint="#8A8787" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="10dp"
+                android:background="#8A8787"
+                android:backgroundTint="#8A8787" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -421,7 +493,7 @@
                     android:layerType="software" />
 
                 <TextView
-                    android:id="@+id/reservation_date"
+                    android:id="@+id/application_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
@@ -437,16 +509,6 @@
                 android:layout_marginRight="10dp"
                 android:background="#8A8787"
                 android:backgroundTint="#000000" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="- 선택사항을 다 선택하신 후 현재 인원이 표시될 때까지 기다리신 후 신청하기를 눌러주세요."
-                android:textColor="#F44336"
-                android:textStyle="bold"
-                android:textSize="15dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"/>
             <LinearLayout
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
