@@ -17,32 +17,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setTitle("KNU|체육진흥센터")
-        auth = Firebase.auth
-        val sessionUID = auth.uid.toString()
+
         binding.button1.setOnClickListener {
             intent=Intent(this,Button1::class.java)
-            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
 
         binding.button2.setOnClickListener {
             intent=Intent(this,Button2::class.java)
-            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
         binding.button3.setOnClickListener {
             intent=Intent(this,ShowCoursesActivity::class.java)
-            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
         binding.button4.setOnClickListener {
             intent=Intent(this,Button4::class.java)
-            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
         binding.button5.setOnClickListener {
             intent=Intent(this,Button5::class.java)
-            intent.putExtra("SessionUID", sessionUID)
             startActivity(intent)
         }
         binding.button6.setOnClickListener {

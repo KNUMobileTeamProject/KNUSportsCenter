@@ -17,6 +17,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.startActivity
 import com.example.knu_sports_1.databinding.ActivityButton2Binding
 import com.example.knu_sports_1.databinding.ActivityCourseApplicationBinding
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -53,7 +54,7 @@ class CourseApplication : AppCompatActivity() {
         setContentView(binding.root)
        val refSessionUser = Firebase.database("https://mobliappteamproject-default-rtdb.asia-southeast1.firebasedatabase.app")
           .reference.child("usrs")
-            .child(intent.extras?.getString("SessionUID")!!)
+            .child(Firebase.auth.uid.toString())
             .child("applied_courses")
         refSessionUser.addValueEventListener(object: ValueEventListener {
 
