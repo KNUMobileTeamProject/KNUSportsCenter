@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             intent=Intent(this,ShowFacilitiesActivity::class.java)
             startActivity(intent)
         }
+        binding.button7.setOnClickListener {
+            intent = Intent(this,MapActivity::class.java)
+            startActivity(intent)
+        }
         binding.button8.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sports.knu.ac.kr/pages/board/list.php?board_sid=4"))
             startActivity(intent)

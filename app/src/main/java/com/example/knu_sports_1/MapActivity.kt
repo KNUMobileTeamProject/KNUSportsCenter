@@ -1,7 +1,10 @@
 package com.example.knu_sports_1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import com.example.knu_sports_1.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -10,6 +13,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.knu_sports_1.databinding.ActivityMapBinding
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.CameraPosition
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -21,7 +26,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setTitle("KNU | 오시는길")
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -41,8 +47,33 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val stadium = LatLng(35.890241, 128.605856)
+        val position: CameraPosition = CameraPosition.Builder()
+            .target(stadium)
+            .zoom(16f)
+            .build()
+        val markerOptions = MarkerOptions()
+        markerOptions.position(stadium)
+        markerOptions.title("체육진흥센터")
+        markerOptions.snippet("대구 북구 대학로 80")
+
+        mMap.addMarker(markerOptions)
+        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(position))
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater=menuInflater
+        inflater.inflate(R.menu.menu_home_button,menu)
+        val menuHome=menu?.findItem(R.id.menu_home)
+        menuHome?.setOnMenuItemClickListener {
+            intent= Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            return@setOnMenuItemClickListener true
+        }
+        return true
+    }
+    override fun onBackPressed() {
+        intent= Intent(this,MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
