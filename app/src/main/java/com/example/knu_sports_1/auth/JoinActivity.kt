@@ -74,7 +74,6 @@ class JoinActivity : AppCompatActivity() {
                                 .reference.child("usrs")
                                 .child(auth.uid.toString()).child("applied_courses").setValue(mapOf<String, String>(0.toString() to "0-0-0"))
                             val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("SessionUID", auth.uid.toString())
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             startActivity(intent)
 

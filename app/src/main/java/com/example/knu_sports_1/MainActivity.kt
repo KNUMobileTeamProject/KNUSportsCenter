@@ -5,15 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import com.example.knu_sports_1.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setTitle("KNU|체육진흥센터")
-        val sessionUID = intent.extras?.getString("SessionUID")
+        auth = Firebase.auth
+        val sessionUID = auth.uid.toString()
         binding.button1.setOnClickListener {
             intent=Intent(this,Button1::class.java)
             intent.putExtra("SessionUID", sessionUID)

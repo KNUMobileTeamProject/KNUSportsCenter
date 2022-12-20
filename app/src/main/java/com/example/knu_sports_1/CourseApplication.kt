@@ -1402,7 +1402,8 @@ class CourseApplication : AppCompatActivity() {
         return true
     }
     override fun onBackPressed() {
-        startActivity(Intent(this, Button2::class.java))
+        intent= Intent(this,Button2::class.java)
+        startActivity(intent)
         finish()
     }
 }

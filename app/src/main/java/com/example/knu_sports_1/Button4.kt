@@ -71,18 +71,14 @@ class Button4 : AppCompatActivity() {
         inflater.inflate(R.menu.menu_home_button,menu)
         val menuHome=menu?.findItem(R.id.menu_home)
         menuHome?.setOnMenuItemClickListener {
-            val sessionUID = intent.extras?.getString("SessionUID")
             intent= Intent(this,MainActivity::class.java)
-            intent.putExtra("SessionUID",sessionUID)
             startActivity(intent)
             return@setOnMenuItemClickListener true
         }
         return true
     }
     override fun onBackPressed() {
-        val sessionUID = intent.extras?.getString("SessionUID")
         intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("SessionUID",sessionUID)
         startActivity(intent)
         finish()
     }
