@@ -70,9 +70,11 @@ class JoinActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(this, "성공",Toast.LENGTH_LONG).show()
-                            Firebase.database("https://mobliappteamproject-default-rtdb.asia-southeast1.firebasedatabase.app")
-                                .reference.child("usrs")
-                                .child(auth.uid.toString()).child("applied_courses").setValue(mapOf<String, String>(0.toString() to "0-0-0"))
+                            val  sessionUsrRef = Firebase.database("https://mobliappteamproject-default-rtdb.asia-southeast1.firebasedatabase.app")
+                                .reference.child("usrs").child(auth.uid.toString())
+
+                            sessionUsrRef.child("applied_courses").setValue(mapOf<String, String>(0.toString() to "0-0-0"))
+                            sessionUsrRef.child("applied_facilities").setValue(mapOf<String, String>(0.toString() to "0-2002.07.16"))
                             val intent = Intent(this, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             startActivity(intent)

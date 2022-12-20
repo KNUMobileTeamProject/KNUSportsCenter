@@ -16,6 +16,20 @@
         android:theme="@style/Theme.Knu_sports_1"
         tools:targetApi="31">
         <activity
+            android:name=".Button6"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Button3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ShowFacilitiesActivity"
             android:exported="false">
             <meta-data

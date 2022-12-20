@@ -17,7 +17,7 @@ class Information_place_VolleyBall : AppCompatActivity() {
         supportActionBar?.setTitle("KNU | 시설물사용신청")
 
         binding.btnIp1.setOnClickListener {
-            intent= Intent(this,Facility_Apply_big_volleyball::class.java)
+            intent= Intent(this,FacilityApply::class.java)
             startActivity(intent)
         }
         val tabLayout: TabLayout = binding.tabs

@@ -68,7 +68,6 @@ class Button1 : AppCompatActivity() {
         return true
     }
     override fun onBackPressed() {
-        val sessionUID = intent.extras?.getString("SessionUID")
         intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
